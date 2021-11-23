@@ -74,10 +74,10 @@ namespace OOPFirstLab
                 Brushes.Brown,                     // медведь
                 Brushes.Gray,                      // енот
                 Brushes.Pink,                      // пиг
-                Brushes.Orange,                    //тигр
-                Brushes.Gold,                      //гепард
-                Brushes.DarkSlateGray,             //волк
-                Brushes.White,                     //чел
+                Brushes.Orange,                    // тигр
+                Brushes.Gold,                      // гепард
+                Brushes.DarkSlateGray,             // волк
+                Brushes.White,                     // чел
                 Brushes.Black                      // дом
             };         // человек
 

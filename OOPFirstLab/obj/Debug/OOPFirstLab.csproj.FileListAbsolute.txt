@@ -28,3 +28,13 @@ F:\projects\OOP-LifeSimulation\OOPFirstLab\obj\Debug\OOPFirstLab.pdb
 F:\projects\OOP-LifeSimulation\OOPFirstLab\bin\Debug\OOPFirstLab.exe.config
 F:\projects\OOP-LifeSimulation\OOPFirstLab\bin\Debug\OOPFirstLab.exe
 F:\projects\OOP-LifeSimulation\OOPFirstLab\bin\Debug\OOPFirstLab.pdb
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\bin\Debug\OOPFirstLab.exe.config
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\bin\Debug\OOPFirstLab.exe
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\bin\Debug\OOPFirstLab.pdb
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.csprojAssemblyReference.cache
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.Form1.resources
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.Properties.Resources.resources
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.csproj.GenerateResource.cache
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.csproj.CoreCompileInputs.cache
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.exe
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Debug\OOPFirstLab.pdb

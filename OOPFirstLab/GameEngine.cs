@@ -10,31 +10,48 @@ using System.Threading.Tasks;
 
 namespace OOPFirstLab
 {
-    public class GameEngine
+    public interface IGameEngine
+    {
+        void NewGame();
+        void GenerateRandomObjects();
+        void NextStep();
+        bool IsZasuha { get; }
+        IGameMap GetCurrentMap();
+        Random GetRandom();
+        void AddGameObjectToProcessing(IGameObject newObject);
+        void RemoveGameObject(IGameObject newObject);
+    }
+
+    public class GameEngine : IGameEngine
     {
         private readonly int rows;
         private readonly int cols;
 
         private readonly Random _random;
 
-        private GameMap _gameMap;
+        private IGameMap _gameMap;
         private List<IGameObject> _gameObjects;
 
         private int m_nCurrentGameObject = 0;
 
-        public GameEngine(Random random, int rows, int cols)
+        public GameEngine(Random random, IGameMap gameMap)
         {
             _random = random;
-            this.rows = rows;
-            this.cols = cols;
+            _gameMap = gameMap;
+            _gameMap.SetGameEngine(this);
         }
 
-        public void NewGame()
+        public void GenerateRandomObjects()
         {
-            IsZasuha = false;
-            _gameMap = new GameMap(this, rows, cols);
             _gameObjects = CreateGameObjects(50);
             _gameMap.Init(_gameObjects);
+        }
+
+        public void NewGame() 
+        {
+            IsZasuha = false;
+            _gameObjects = new List<IGameObject>();
+            _gameMap.Clear();
         }
 
         private List<IGameObject> CreateGameObjects(int countOfEachType)
@@ -114,7 +131,7 @@ namespace OOPFirstLab
             }
         }
 
-        public GameMap GetCurrentMap()
+        public IGameMap GetCurrentMap()
         {
             return _gameMap;
         }

@@ -143,5 +143,10 @@ namespace OOPFirstLab.Common
             int yOffset = Math.Abs(Y - pos.Y);
             return Math.Max(xOffset, yOffset);
         }
+
+        public override string ToString()
+        {
+            return $"Position({X},{Y})";
+        }
     }
 }

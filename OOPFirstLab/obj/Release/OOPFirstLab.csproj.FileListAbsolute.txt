@@ -18,3 +18,13 @@ C:\Users\Elza\source\repos\OOP-LifeSimulation\OOPFirstLab\obj\Release\OOPFirstLa
 C:\Users\Elza\source\repos\OOP-LifeSimulation\OOPFirstLab\obj\Release\OOPFirstLab.csproj.CoreCompileInputs.cache
 C:\Users\Elza\source\repos\OOP-LifeSimulation\OOPFirstLab\obj\Release\OOPFirstLab.exe
 C:\Users\Elza\source\repos\OOP-LifeSimulation\OOPFirstLab\obj\Release\OOPFirstLab.pdb
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\bin\Release\OOPFirstLab.exe.config
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\bin\Release\OOPFirstLab.exe
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\bin\Release\OOPFirstLab.pdb
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.csprojAssemblyReference.cache
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.Form1.resources
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.Properties.Resources.resources
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.csproj.GenerateResource.cache
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.csproj.CoreCompileInputs.cache
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.exe
+C:\Users\Elza\Desktop\Refactoring\OOP-life-simulation\OOPFirstLab\obj\Release\OOPFirstLab.pdb

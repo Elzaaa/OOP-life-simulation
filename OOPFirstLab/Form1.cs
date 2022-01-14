@@ -15,7 +15,7 @@ namespace OOPFirstLab
 {
     public partial class Form1 : Form
     {
-        private GameEngine gameEngine;
+        private IGameEngine gameEngine;
         private static Random s_r = new Random();
 
         public Form1()
@@ -26,16 +26,17 @@ namespace OOPFirstLab
         {
             if (timer1.Enabled)
                 return;
-        
+
+            GameMap gameMap = new GameMap(500, 500);
 
             gameEngine = new GameEngine
                 (
                     s_r,
-                    rows: 500,
-                    cols: 500
+                    gameMap
                 );
 
             gameEngine.NewGame();
+            gameEngine.GenerateRandomObjects();
 
             if (pictureBox1.Image != null)
                 pictureBox1.Image.Dispose();
@@ -81,7 +82,7 @@ namespace OOPFirstLab
                 Brushes.Black                      // дом
             };         // человек
 
-            var RealMap = gameEngine.GetCurrentMap();
+            IGameMap RealMap = gameEngine.GetCurrentMap();
             for (int h = 0; h < RealMap.Height; h++)
             {
                 for (int w = 0; w < RealMap.Width; w++)

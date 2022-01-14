@@ -10,7 +10,7 @@ namespace OOPFirstLab.GameObjects
         /// </summary>
         public static int kMaxFruitCount = 5;
 
-        public House(GameEngine gameEngine) : base(gameEngine, false, Gender.Unspecified)
+        public House(IGameEngine gameEngine) : base(gameEngine, false, Gender.Unspecified)
         {
         }
 

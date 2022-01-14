@@ -5,9 +5,9 @@ namespace OOPFirstLab.GameObjects
 {
     public class GameObjectFactory
     {
-        GameEngine _gameEngine;
+        IGameEngine _gameEngine;
 
-        public GameObjectFactory(GameEngine gameEngine)
+        public GameObjectFactory(IGameEngine gameEngine)
         {
             _gameEngine = gameEngine;
         }

@@ -7,15 +7,29 @@ using System.Linq;
 
 namespace OOPFirstLab
 {
-    public class GameMap
+    public interface IGameMap
     {
-        readonly GameEngine _gameEngine;
-        private readonly List<IGameObject>[,] _gameObjects;        
+        int Height { get; }
+        int Width { get; }
+        void Clear();
+        void SetGameEngine(IGameEngine gameEngine);
+        void Init(List<IGameObject> gameObjects);
+        List<IGameObject> GetObjectsAtPos(Position pos);
+        List<IGameObject> GetObjectsAtPos(int x, int y);
+        void RemoveGameObject(IGameObject gameObject);
+        IGameObject GetNearestObject(Position position, Func<IGameObject, bool> func, int maxDistance = -1);
+        bool PlaceGameObjectNearPositionAtFreeCell(IGameObject @object, Position position);
+        bool MoveGameObjectToPosition(IGameObject gameObject, Position position);
+        (bool, Position) GetNearestCellWithoutHouses(Position position);
+    }
 
-        public GameMap(GameEngine gameEngine, int w, int h)
+    public class GameMap : IGameMap
+    {
+        IGameEngine _gameEngine;
+        private List<IGameObject>[,] _gameObjects;        
+
+        public GameMap(int w, int h)
         {
-            _gameEngine = gameEngine;
-
             // задать ширину и высоту карты
             Width = w;
             Height = h;
@@ -30,17 +44,33 @@ namespace OOPFirstLab
             }
         }
 
+        public void SetGameEngine(IGameEngine gameEngine) { _gameEngine = gameEngine; }
+
         public int Width { get; private set; }
         public int Height { get; private set; }
 
         public void Init(List<IGameObject> gameObjects)
         {
+            Clear();
+
             // запомнить персонажей и расставить их (рандомно)
             foreach (IGameObject gameObject in gameObjects)
             {
                 Position pos = GetRandomFreePosition();
                 gameObject.Position = pos;
                 _gameObjects[pos.X, pos.Y].Add(gameObject);
+            }
+        }
+
+        public void Clear()
+        {
+            _gameObjects = new List<IGameObject>[Width, Height];
+            for (int i = 0; i < Width; ++i)
+            {
+                for (int j = 0; j < Height; ++j)
+                {
+                    _gameObjects[i, j] = new List<IGameObject>();
+                }
             }
         }
 
@@ -190,7 +220,7 @@ namespace OOPFirstLab
             return GetObjectsAtPos(x, y).Count > 0;
         }
 
-        public List<IGameObject> GetObjectsAtPos(Position pos)
+        public virtual List<IGameObject> GetObjectsAtPos(Position pos)
         {
             return GetObjectsAtPos(pos.X, pos.Y);
         }

@@ -10,9 +10,9 @@ namespace OOPFirstLab.GameObjects
     public class GameObject<T> : IGameObject where T : IGameObjectDescriptor, new()
     {
         protected readonly T _objectDescriptor = new T();
-        protected readonly GameEngine _gameEngine;
+        protected readonly IGameEngine _gameEngine;
 
-        public GameObject(GameEngine gameEngine, bool isMutant, Gender gender)
+        public GameObject(IGameEngine gameEngine, bool isMutant, Gender gender)
         {
             // Мутантом может быть только объект описатель которого это подразумевает. Не мутантом может быть любой
             Debug.Assert(_objectDescriptor.CanBeMutant && isMutant || !isMutant);
@@ -49,9 +49,20 @@ namespace OOPFirstLab.GameObjects
 
         public Gender Gender { get; protected set; } = Gender.Unspecified;
 
-        public int Health { get; protected set; }
+        public int Health { get; set; }
 
         public bool IsMutant { get; protected set; }
+
+        public void SetWantToEat()
+        {
+            int WantToEatBorderHealth = ((int) (_objectDescriptor.MaxHealth * 0.7)) - 1;
+            Health = Math.Min(Health, WantToEatBorderHealth);
+        }
+
+        public void SetWantToBreed()
+        {
+            BreedTimer = 0;
+        }     
 
         public virtual bool MakeMove()
         {
@@ -123,9 +134,9 @@ namespace OOPFirstLab.GameObjects
         /// <summary>
         /// Объект-пара для размножения
         /// </summary>
-        protected GameObject<T> Pair { get; set; }
-
-        protected int BreedTimer { get; set; }
+        public GameObject<T> Pair { get; set; }
+        
+        public int BreedTimer { get; set; }
 
         protected bool WantToEat { get { return Health < _objectDescriptor.MaxHealth * 0.7; } }
 

@@ -11,17 +11,17 @@ namespace OOPFirstLab.GameObjects
     /// </summary>
     public class Human : GameObject<HumanDescriptor>
     {
-        public Human(GameEngine gameEngine, bool isMutant, Gender g) : base(gameEngine, isMutant, g)
+        public Human(IGameEngine gameEngine, bool isMutant, Gender g) : base(gameEngine, isMutant, g)
         {
         }
 
         /// <summary>
         /// Дом, милый дом
         /// </summary>
-        private House Home { get; set; }
+        public House Home { get; set; }
 
         // Женщины могут таскать фрукты домой, это свойство показывает что она несёт фрукт
-        private bool CarryFruit { get; set; } = false;
+        public bool CarryFruit { get; set; } = false;
 
         public override bool MakeMove()
         {
@@ -185,7 +185,7 @@ namespace OOPFirstLab.GameObjects
             return _gameEngine.GetCurrentMap().GetNearestCellWithoutHouses(Position);
         }
 
-        private void BuildHome()
+        public void BuildHome()
         {
             // Создаем объект "дом" в нашей клетке
             GameObjectFactory factory = new GameObjectFactory(_gameEngine);

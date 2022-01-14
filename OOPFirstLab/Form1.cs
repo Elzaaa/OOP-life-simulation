@@ -16,7 +16,7 @@ namespace OOPFirstLab
     public partial class Form1 : Form
     {
         private IGameEngine gameEngine;
-        private static Random s_r = new Random();
+        private static Random gameRandom = new Random();
 
         public Form1()
         {
@@ -31,7 +31,7 @@ namespace OOPFirstLab
 
             gameEngine = new GameEngine
                 (
-                    s_r,
+                    gameRandom,
                     gameMap
                 );
 
@@ -53,7 +53,7 @@ namespace OOPFirstLab
 
         private void DrawCurrentState()
         {
-            Text = gameEngine.IsZasuha ? "Засуха" : "Нормальная погода";
+            Text = gameEngine.IsDrought ? "Засуха" : "Нормальная погода";
 
             if (pictureBox1.Image == null)
             {

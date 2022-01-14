@@ -15,7 +15,7 @@ namespace OOPFirstLab
         void NewGame();
         void GenerateRandomObjects();
         void NextStep();
-        bool IsZasuha { get; }
+        bool IsDrought { get; }
         IGameMap GetCurrentMap();
         Random GetRandom();
         void AddGameObjectToProcessing(IGameObject newObject);
@@ -49,7 +49,7 @@ namespace OOPFirstLab
 
         public void NewGame() 
         {
-            IsZasuha = false;
+            IsDrought = false;
             _gameObjects = new List<IGameObject>();
             _gameMap.Clear();
         }
@@ -147,6 +147,6 @@ namespace OOPFirstLab
             return _random;
         }
 
-        public bool IsZasuha { get; private set; }
+        public bool IsDrought { get; private set; }
     }
 }
